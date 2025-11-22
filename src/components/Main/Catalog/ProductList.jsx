@@ -13,7 +13,7 @@ const ProductList = ({ products = [] }) => {
             slug={item.slug}
             price={item.price}
             description={item.description}
-            category={item.category.image}
+            image={item.images[0]}
           />
         );
       })}

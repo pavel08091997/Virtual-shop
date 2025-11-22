@@ -9,9 +9,10 @@ const Main = () => {
     fetch("https://api.escuelajs.co/api/v1/products")
       .then((response) => response.json())
       .then((data) => {
-        setProducts(data);
+        setProducts(data.slice(0, data.length - 3));
       });
   }, []);
+  console.log(products)
 
   return (
     <div>

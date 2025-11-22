@@ -1,0 +1,12 @@
+.priceConteiner {
+  font-size: 32px;
+  margin-top: auto !important;
+}
+.cardConteiner {
+  display: grid;
+  grid-template-rows: auto 1fr;
+}
+.cardContent{
+    display: flex;
+    flex-direction: column;
+}
