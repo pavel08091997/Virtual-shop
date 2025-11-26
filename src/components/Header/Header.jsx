@@ -5,12 +5,12 @@ const Header = () => {
 
   const linkTG = 'https://t.me/Pm08091997'
   return (
-    <nav>
-     <div>
-        <a href="#" className="brand-logo">
+    <nav className={styles.nav}>
+     <div className={styles.header}>
+        <a href="#" className={`brand-logo ${styles.logo}`}>
           project-shop
         </a>
-        <a className={styles.link} onClick={()=> window.open(linkTG)}>Telegram</a>
+        <a className={styles.link} href={linkTG}>Telegram</a>
       </div>
     </nav>
   );

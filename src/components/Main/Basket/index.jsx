@@ -1,11 +1,20 @@
-import React from 'react'
+import React from "react";
+import styles from "./basket.module.css";
 
-const  Basket = () => {
+
+const Basket = ({ onClick }) => {
   return (
-    <div>
-      
+    <div className={styles.overvlayPopup}>
+      <div className={styles.contentPopup}>
+        <button
+          onClick={onClick}
+          className={`material-icons ${styles.buttonContainer}`}
+        >
+          add_shopping_cart
+        </button>
+           </div>
     </div>
-  )
-}
+  );
+};
 
-export default Basket
+export default Basket;

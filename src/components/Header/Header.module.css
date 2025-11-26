@@ -1,9 +1,17 @@
 .link {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  justify-content: space-around;
-  padding-top: 5px;
+  display: block;
   color: #fff;
   background-color: #ee6e73;
+}
+.header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+.logo {
+  position: static !important;
+}
+.nav {
+  height: auto !important;
 }

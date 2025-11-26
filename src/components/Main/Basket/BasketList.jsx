@@ -1,11 +1,12 @@
-import React from 'react'
+
+import BasketItem from "./BasketItem";
 
 const BasketList = () => {
   return (
     <div>
-      
+      <BasketItem />
     </div>
-  )
-}
+  );
+};
 
-export default BasketList
+export default BasketList;
