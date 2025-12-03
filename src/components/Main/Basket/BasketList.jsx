@@ -1,10 +1,11 @@
-
 import BasketItem from "./BasketItem";
 
-const BasketList = () => {
+const BasketList = ({basketProducts }) => {
   return (
     <div>
-      <BasketItem />
+      {basketProducts.map((item) => (
+        <BasketItem key={item.id} title={item.title} price={item.price} count={item.count} />
+      ))}
     </div>
   );
 };

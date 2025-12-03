@@ -19,8 +19,8 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 450px;
-  min-height: 100px;
+  width: 500px;
+  min-height: 240px;
   background-color: rgb(232, 241, 241);
   z-index: 1000;
   box-shadow: 0px 0px 32px #ee6e73;
