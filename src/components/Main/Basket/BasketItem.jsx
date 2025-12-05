@@ -2,8 +2,8 @@ import React from "react";
 import styles from "./BasketIem.module.css";
 import ProductCard from "../Catalog/ProductCard";
 
-const BasketItem = ({ id, title, price, count }) => {
-  const totalPrice = price * count
+const BasketItem = ({ id, title, price, count, removeProductFromBasket }) => {
+  const totalPrice = price * count;
   return (
     <div className={styles.itemContainer}>
       <p className={styles.nameContainer}>{title}</p>
@@ -11,7 +11,13 @@ const BasketItem = ({ id, title, price, count }) => {
       <p>{count}</p>
       <button className={`material-icons`}>remove</button>
       <p className={styles.priceContainer}>{totalPrice}</p>
-      <button className={`material-icons`}>delete</button>
+      <button
+        className={`material-icons`}
+        onClick={() => removeProductFromBasket(id)}
+      >
+        delete
+      </button>
+      {/* <button className={`material-icons`} onClick={()=> removeProductFromBasket(id)}>delete</button> */}
     </div>
   );
 };

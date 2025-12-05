@@ -29,6 +29,12 @@ const Main = () => {
       setBasketProducts([...basketProducts, newProduct]);
     }
   };
+  const removeProductFromBasket = (id) => {
+    const filterBasketProduct = basketProducts.filter(
+      (item) => item.id !== id
+    );
+    setBasketProducts(filterBasketProduct);
+  };
 
   const onClick = () => {
     setOpenBasket(!openBasket);
@@ -45,7 +51,7 @@ const Main = () => {
   return (
     <div>
       <Basket onClick={onClick} />
-      {openBasket && <BasketWindow basketProducts={basketProducts} />}
+      {openBasket && <BasketWindow basketProducts={basketProducts} removeProductFromBasket ={removeProductFromBasket}/>} 
       <Catalog />
       <ProductList
         products={products}

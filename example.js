@@ -28,3 +28,24 @@ const fruits = {
 
 const newFruits = {...fruits,  apple: 'green'}
 console.log(newFruits)
+
+const users = [{
+  title: 'test',
+  count: 1,
+},
+{
+  title: 'dsadas',
+  count: 1,
+}
+]
+
+users[0].count +=1
+
+console.log(users)
+
+
+// const array = [1, 2, 3]
+// array.push(4)
+// array.pop()
+
+// setArray([...array, 4])

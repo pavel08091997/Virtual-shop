@@ -1,10 +1,10 @@
 import styles from "./basket.module.css";
 import BasketList from "./BasketList";
 
-const BasketWindow = ({ basketProducts }) => {
+const BasketWindow = ({ basketProducts,removeProductFromBasket }) => {
   return (
     <div className={styles.openBasket}>
-      <BasketList basketProducts={basketProducts} />
+      <BasketList basketProducts={basketProducts} removeProductFromBasket={removeProductFromBasket} />
     </div>
   );
 };
