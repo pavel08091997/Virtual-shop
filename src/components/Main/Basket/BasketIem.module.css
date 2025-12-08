@@ -5,3 +5,7 @@
   font-size: 10px;
   margin: 32px;
 }
+.clearContainer {
+  display: flex;
+  flex-direction: row-reverse;
+}

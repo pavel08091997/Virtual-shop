@@ -29,10 +29,28 @@ const Main = () => {
       setBasketProducts([...basketProducts, newProduct]);
     }
   };
-  const removeProductFromBasket = (id) => {
-    const filterBasketProduct = basketProducts.filter(
-      (item) => item.id !== id
+
+  const increase = (id) => {
+    const increaseProduct = basketProducts.map((item) =>
+      item.id === id ? { ...item, count: item.count + 1 } : item
     );
+    setBasketProducts(increaseProduct);
+  };
+
+  const decrease = (id) => {
+    const decreaseProduct = basketProducts.map((item) => {
+      if (item.id === id) {
+        return {
+          ...item,
+          count: item.count - 1 > 1 ? item.count - 1 : 1,
+        };
+      }
+    });
+    setBasketProducts(decreaseProduct);
+  };
+  
+  const removeProductFromBasket = (id) => {
+    const filterBasketProduct = basketProducts.filter((item) => item.id !== id);
     setBasketProducts(filterBasketProduct);
   };
 
@@ -51,7 +69,14 @@ const Main = () => {
   return (
     <div>
       <Basket onClick={onClick} />
-      {openBasket && <BasketWindow basketProducts={basketProducts} removeProductFromBasket ={removeProductFromBasket}/>} 
+      {openBasket && (
+        <BasketWindow
+          basketProducts={basketProducts}
+          removeProductFromBasket={removeProductFromBasket}
+          increase={increase}
+          decrease={decrease}
+        />
+      )}
       <Catalog />
       <ProductList
         products={products}
