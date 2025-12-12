@@ -6,6 +6,5 @@
   margin: 32px;
 }
 .clearContainer {
-  display: flex;
-  flex-direction: row-reverse;
+  cursor: pointer;
 }

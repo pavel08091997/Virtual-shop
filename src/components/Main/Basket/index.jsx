@@ -1,10 +1,9 @@
 import React from "react";
 import styles from "./basket.module.css";
 
-
-const Basket = ({ onClick }) => {
+const Basket = ({ onClick, basketProducts }) => {
   return (
-    <div className={styles.overvlayPopup}>
+    <div>
       <div className={styles.contentPopup}>
         <button
           onClick={onClick}
@@ -12,7 +11,8 @@ const Basket = ({ onClick }) => {
         >
           add_shopping_cart
         </button>
-           </div>
+        <span>{basketProducts.length}</span>
+      </div>
     </div>
   );
 };

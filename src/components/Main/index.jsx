@@ -48,7 +48,7 @@ const Main = () => {
     });
     setBasketProducts(decreaseProduct);
   };
-  
+
   const removeProductFromBasket = (id) => {
     const filterBasketProduct = basketProducts.filter((item) => item.id !== id);
     setBasketProducts(filterBasketProduct);
@@ -56,6 +56,11 @@ const Main = () => {
 
   const onClick = () => {
     setOpenBasket(!openBasket);
+  };
+
+  const clearBasket = () => {
+    setBasketProducts([]);
+    setOpenBasket(false);
   };
 
   useEffect(() => {
@@ -68,13 +73,17 @@ const Main = () => {
 
   return (
     <div>
-      <Basket onClick={onClick} />
+      {!!basketProducts.length && (
+        <Basket onClick={onClick} basketProducts={basketProducts} />
+      )}
       {openBasket && (
         <BasketWindow
           basketProducts={basketProducts}
           removeProductFromBasket={removeProductFromBasket}
           increase={increase}
           decrease={decrease}
+          onClick={onClick}
+          clearBasket={clearBasket}
         />
       )}
       <Catalog />
